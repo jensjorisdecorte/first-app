@@ -2,10 +2,14 @@
 
 <p>Raad een getal tussen 1 en 100.</p>
 
-<input type="number" #box/>
+<mat-form-field>
+    <input matInput type="number" placeholder="Jouw gok" #box>
+</mat-form-field>
 
-<button (click)="onEnter(box.value)">GOK</button>
+<button mat-raised-button color="primary" (click)="onEnter(box.value)">GOK</button>
 
 <p> {{ hint }} </p>
+
+<mat-progress-bar mode="determinate" [value]="aantalGokken*10"></mat-progress-bar>
 
 <p>Nog {{ aantalGokken }} beurten resterend.</p>
